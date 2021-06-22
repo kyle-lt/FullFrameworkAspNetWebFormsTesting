@@ -185,7 +185,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
+    <Content Include="README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="iFrameFun.aspx" />
+    <Content Include="iFrameProduct.aspx" />
+    <Content Include="iFrameUser.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -338,6 +343,27 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="iFrameFun.aspx.cs">
+      <DependentUpon>iFrameFun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iFrameFun.aspx.designer.cs">
+      <DependentUpon>iFrameFun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iFrameProduct.aspx.cs">
+      <DependentUpon>iFrameProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iFrameProduct.aspx.designer.cs">
+      <DependentUpon>iFrameProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iFrameUser.aspx.cs">
+      <DependentUpon>iFrameUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iFrameUser.aspx.designer.cs">
+      <DependentUpon>iFrameUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

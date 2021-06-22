@@ -7,6 +7,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
+    <!-- AppDynamics Javascript Agent -->
+    <script charset='UTF-8'>
+        window['adrum-start-time'] = new Date().getTime();
+        (function (config) {
+            config.appKey = 'AD-AAB-ABE-WWU';
+            config.adrumExtUrlHttp = 'http://cdn.appdynamics.com';
+            config.adrumExtUrlHttps = 'https://cdn.appdynamics.com';
+            config.beaconUrlHttp = 'http://col.eum-appdynamics.com';
+            config.beaconUrlHttps = 'https://col.eum-appdynamics.com';
+            config.xd = { enable: false };
+        })(window['adrum-config'] || (window['adrum-config'] = {
+
+            userEventInfo: {
+
+                "PageView": function (context) {
+                    // Debugging ASP.NET inline expression value
+                    var username = "<%: Context.User.Identity.GetUserName()  %>";
+                    if (username == "") {
+                        console.log("No username, not logged in!");
+                    }
+                    else {
+                        console.log("username = " + username);
+                    }
+                    return {
+                        userData: {
+                            // ** Example to grab value from sessionStorage **
+                            //sessionId: window.sessionStorage.getItem('sessionId')
+                            // ** Example to grab data from ASP.NET inline expression **
+                            username: "<%: Context.User.Identity.GetUserName()  %>"
+                        }
+                    }
+                }
+
+            }
+
+        }));
+    </script>
+    <script src='//cdn.appdynamics.com/adrum/adrum-latest.js'></script>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -38,6 +76,7 @@
         </asp:ScriptManager>
 
         <!-- Script to Test Javascript access to ASP.NET inline expression results -->
+        <!--
         <script type="text/javascript">
             var username = "<%: Context.User.Identity.GetUserName()  %>";
             if (username == "") {
@@ -47,6 +86,7 @@
                 console.log("username = " + username);
             }
         </script>
+        -->
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -63,6 +103,7 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/iFrameFun">iFrameFun</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
