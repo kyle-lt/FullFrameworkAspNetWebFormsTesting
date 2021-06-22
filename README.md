@@ -1,4 +1,4 @@
-﻿# FullFrameworkAspNetWebFormsTesting
+# FullFrameworkAspNetWebFormsTesting
 
 This project uses Full Framework ASP.NET Web Forms to test out some things.
 
